@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-6 md:p-12 lg:p-20">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">Disaster Management Portal</h1>
+            <p class="text-md md:text-lg text-slate-400">A proactive approach to rescue and relief.</p>
+        </header>
+
+        <!-- Emergency Alert -->
+        <section class="bg-red-800 bg-opacity-30 border border-red-700 text-red-300 p-4 md:p-6 rounded-xl mb-8 shadow-2xl">
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle text-red-500 flex-shrink-0">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <div>
+                    <h2 class="text-xl font-bold">Emergency Warning</h2>
+                    <p class="mt-2 text-sm md:text-base">
+                        A disaster event is occurring. Stay calm, seek shelter, and follow official emergency instructions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <div class="mb-8">
+            <div class="border-b border-slate-700">
+                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                    <button class="tab-button active-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="emergency">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 10 22 2"></polygon>
+                        </svg>
+                        Emergency SOS
+                    </button>
+                    <button class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="alerts">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        Alerts & Warnings
+                    </button>
+                    <button class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="locations">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2">
+                            <path d="M12 2C8.686 2 6 4.686 6 8s6 14 6 14s6-10.686 6-14s-2.686-6-6-6z"></path>
+                            <circle cx="12" cy="8" r="3"></circle>
+                        </svg>
+                        Safe Locations
+                    </button>
+                    <button class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="precautions">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Precautions
+                    </button>
+                    <button class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="resources">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Resources
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="tabContent">
+            <!-- Emergency SOS Tab -->
+            <div class="tab-content active" id="emergency-tab">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 card-glow">
+                        <div class="text-center">
+                            <div class="relative inline-flex items-center justify-center p-3 rounded-full bg-red-600 bg-opacity-20 mb-4 icon">
+                                <div class="absolute inline-flex h-full w-full bg-red-600 opacity-50 rounded-full pulse-animation"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send text-red-400">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 10 22 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-white">Send SOS</h3>
+                            <p class="text-sm text-slate-400 mb-6">
+                                Clicking this button will send an immediate rescue alert with your location to emergency services.
+                            </p>
+                            <button id="rescueBtn" class="w-full bg-red-600 text-white font-bold py-3 rounded-full transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-50 shadow-md">
+                                Send SOS
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 card-glow">
+                        <div class="text-center">
+                            <div class="relative inline-flex items-center justify-center p-3 rounded-full bg-blue-600 bg-opacity-20 mb-4 icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-white">Emergency Contacts</h3>
+                            <p class="text-sm text-slate-400 mb-6">
+                                Quick access to important emergency contact numbers.
+                            </p>
+                            <button id="contactsBtn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-full transition-all duration-300 hover:bg-blue-700">
+                                View Contacts
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts & Warnings Tab -->
+            <div class="tab-content" id="alerts-tab">
+                <div class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700 mb-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-white">Current Alerts</h2>
+                    </div>
+                    <div id="currentAlerts" class="space-y-4">
+                        <!-- Alerts will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
+                    <h3 class="text-xl font-bold text-white mb-4">Upcoming Disasters (Within 1 month)</h3>
+                    <div id="upcomingDisasters" class="space-y-4">
+                        <!-- Upcoming disasters will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safe Locations Tab -->
+            <div class="tab-content" id="locations-tab">
+                <div class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400">
+                            <path d="M12 2C8.686 2 6 4.686 6 8s6 14 6 14s6-10.686 6-14s-2.686-6-6-6z"></path>
+                            <circle cx="12" cy="8" r="3"></circle>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-white">Safe Places Nearby</h2>
+                    </div>
+                    <p class="text-slate-400 mb-6">Finding nearby safe locations for evacuation. Please enable location services for the best results.</p>
+                    <div id="safePlacesList" class="space-y-4">
+                        <!-- Safe places will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Precautions Tab -->
+            <div class="tab-content" id="precautions-tab">
+                <div class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-white">Disaster Precautions</h2>
+                    </div>
+                    <p class="text-slate-400 mb-4">Click on a disaster type to see the precautions.</p>
+                    <div id="precautionsList" class="space-y-4">
+                        <!-- Precautions will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Tab -->
+            <div class="tab-content" id="resources-tab">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-white mb-4">Emergency Kit Checklist</h3>
+                        <div id="emergencyKit" class="space-y-2">
+                            <!-- Emergency kit items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-white mb-4">Important Documents</h3>
+                        <div id="importantDocs" class="space-y-2">
+                            <!-- Important documents will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="messageBox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center p-4 z-50">
+        <div class="bg-slate-800 p-6 rounded-xl shadow-2xl max-w-sm w-full text-center border border-slate-700">
+            <h3 id="messageTitle" class="text-xl font-bold mb-4 text-white"></h3>
+            <p id="messageBody" class="text-slate-400 mb-6"></p>
+            <button id="closeMsgBtn" class="w-full bg-slate-700 text-white font-bold py-3 rounded-full hover:bg-slate-600 transition-colors duration-300">Close</button>
+        </div>
+    </div>
+
+    <!-- Emergency Contacts Modal -->
+    <div id="contactsModal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center p-4 z-50">
+        <div class="bg-slate-800 p-6 rounded-xl shadow-2xl max-w-md w-full border border-slate-700">
+            <h3 class="text-xl font-bold mb-4 text-white">Emergency Contacts</h3>
+            <div id="contactsList" class="space-y-3 mb-6">
+                <!-- Contacts will be populated by JavaScript -->
+            </div>
+            <button id="closeContactsBtn" class="w-full bg-slate-700 text-white font-bold py-3 rounded-full hover:bg-slate-600 transition-colors duration-300">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
